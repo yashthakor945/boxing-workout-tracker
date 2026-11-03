@@ -1,0 +1,21 @@
+{
+  "name": "Boxing Workout Tracker",
+  "short_name": "Boxing Tracker",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#090909",
+  "theme_color": "#090909",
+  "description": "Track the exact boxing workout plan, with Round 4 removed.",
+  "icons": [
+    {
+      "src": "icon-192.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "icon-512.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}
