@@ -6,6 +6,7 @@
 <meta name="theme-color" content="#090909">
 <meta name="description" content="Boxing Workout Tracker">
 <link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png" type="image/png">
 <title>Boxing Workout Tracker</title>
 <style>
 :root{color-scheme:dark;--bg:#090909;--card:#171717;--card2:#202020;--line:#333;--red:#e23d3d;--text:#f7f7f7;--muted:#a2a2a2;--green:#31c987}
@@ -39,7 +40,7 @@ textarea{width:100%;min-height:65px;background:#101010;border:1px solid #444;bor
 </head>
 <body>
 <header>
- <img class="logo" src="icon-192.jpg" alt="Boxing Tracker Logo">
+ <img class="logo" src="icon-192.png" alt="Boxing Tracker Logo">
  <div><div class="brand">FUEL YOUR FIGHT</div><div class="brandtitle">BOXING WORKOUT</div><div class="tagline">DISCIPLINE • CONSISTENCY • PROGRESS</div></div>
 </header>
 <main>
@@ -185,7 +186,7 @@ document.getElementById('next').addEventListener('click',()=>{visibleMonth=new D
 document.getElementById('addBtn').addEventListener('click',()=>{const name=prompt('Exercise name');if(!name||!name.trim())return;const target=prompt('Reps / duration','10 reps');if(target===null)return;const record=getRecord(selectedDate);record.rounds[record.rounds.length-1].items.push({name:name.trim(),target:target.trim(),done:false});saveRecords();renderCalendar();renderStats();renderWorkout();showToast('Exercise added');});
 document.getElementById('resetBtn').addEventListener('click',()=>{if(confirm('Uncheck all exercises for this date?')){getRecord(selectedDate).rounds.forEach(round=>round.items.forEach(item=>item.done=false));saveRecords();renderCalendar();renderStats();renderWorkout();showToast('Checks reset');}});
 renderCalendar();renderStats();renderWorkout();
-if('serviceWorker' in navigator && location.protocol.startsWith('http:') || ('serviceWorker' in navigator && location.protocol.startsWith('https:'))){navigator.serviceWorker.register('./sw.js').catch(()=>{});}
+if('serviceWorker' in navigator && location.protocol.startsWith('http:') || ('serviceWorker' in navigator && location.protocol.startsWith('https:'))){navigator.serviceWorker.register('./sw.js', {updateViaCache:'none'}).catch(()=>{});}
 </script>
 </body>
 </html>
